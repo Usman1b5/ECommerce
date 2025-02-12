@@ -31,6 +31,7 @@ public class OrdersService {
 
     public void cancelOrder(int customerId) {
         ordersDAO.cancelOrder(customerId);
+        System.out.println("yo");
     }
 
     public List<Map<String, Object>> fetchOrdersWithinDateRange(Date startDate, Date endDate) {
