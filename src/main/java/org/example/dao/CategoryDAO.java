@@ -21,7 +21,12 @@ public class CategoryDAO {
     public void addCategory(String name, String description){
 
         String sql = "insert into category(cat_name, cat_desc) values (?, ?)";
-        jdbcTemplate.update(sql, name, description);
+        int result = jdbcTemplate.update(sql, name, description);
+        if (result > 0){
+            System.out.println("Category Added Successfully.");
+        }else{
+            System.out.println("Category Failed to add.");
+        }
     }
 
 

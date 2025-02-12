@@ -66,8 +66,8 @@ public class ReportMenu {
     public static void fetchOrdersWithinDateRange(OrdersService ordersService){
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date startDate = sdf.parse("2025-02-11");
-            Date endDate = sdf.parse("2025-02-12");
+            Date startDate = sdf.parse("2025-02-12");
+            Date endDate = sdf.parse("2025-02-13");
 
             List<Map<String, Object>> orders = ordersService.fetchOrdersWithinDateRange(startDate, endDate);
 

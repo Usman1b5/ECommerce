@@ -52,8 +52,12 @@ public class OrdersDAO {
 
     public void UpdateOrderStatus(String orderStatus, int orderId) {
         String sql = "update orders set order_status = ? where order_id = ?";
-        jdbcTemplate.update(sql, orderStatus, orderId);
-
+        int result = jdbcTemplate.update(sql, orderStatus, orderId);
+        if (result > 0){
+            System.out.println("Order Status Updated Successfully.");
+        }else{
+            System.out.println("Failed to update.");
+        }
     }
 
 

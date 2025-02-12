@@ -19,7 +19,12 @@ public class CustomerDAO {
 
     public void addCustomer(String custName, String custAddress, BigInteger custPhoneNo){
         String sql = "insert into customer(cust_name, cust_address, cust_phone) values (?, ?, ?)";
-        jdbcTemplate.update(sql, custName, custAddress, custPhoneNo);
+        int result = jdbcTemplate.update(sql, custName, custAddress, custPhoneNo);
+        if (result > 0){
+            System.out.println("Customer Data Added Successfully.");
+        }else{
+            System.out.println("Customer Failed to add.");
+        }
     }
 
     public List<Customer> getCustomersByName(String custName){

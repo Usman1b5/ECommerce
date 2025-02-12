@@ -80,7 +80,6 @@ public class ProductMenu {
                     int prod_id = productId.nextInt();
 
                     productService.updateProduct(prod_price, prod_quantity, prod_desc, prod_id);
-                    System.out.println("Product Updated Successfully...");
                     break;
                 case 5:
                     System.out.println("Removing product...");
@@ -88,8 +87,6 @@ public class ProductMenu {
                     Scanner prodId = new Scanner(System.in);
                     int product_Id = prodId.nextInt();
                     productService.deleteProduct(product_Id);
-
-                    System.out.println("Product Removed Successfully...");
                     break;
                 case 6:
                     return;

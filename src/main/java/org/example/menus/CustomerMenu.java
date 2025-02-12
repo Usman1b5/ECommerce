@@ -35,7 +35,6 @@ public class CustomerMenu {
                     BigInteger custPhoneNo = phoneNo.nextBigInteger();
 
                     customerService.addCustomer(custName, custAddress, custPhoneNo);
-                    System.out.println("Customer Data Added Successfully...");
                     break;
                 case 2:
 

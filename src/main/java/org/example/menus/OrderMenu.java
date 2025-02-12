@@ -40,8 +40,6 @@ public class OrderMenu {
                         orderItems.add(new OrderItem(productId,quantity));
 
                         ordersService.createOrder(customerId, orderItems);
-
-                        System.out.println("Order Created Successfully...");
                     }
                     break;
                 case 2:

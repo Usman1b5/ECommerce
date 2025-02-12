@@ -29,8 +29,6 @@ public class CategoryMenu {
                     String categoryDesc = description.nextLine();
 
                     categoryService.addCategory(categoryName, categoryDesc);
-
-                    System.out.println("Category Added Successfully...");
                     break;
                 case 2:
                     System.out.println("Listing all categories...");

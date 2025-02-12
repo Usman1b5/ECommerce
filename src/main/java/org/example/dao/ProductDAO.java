@@ -19,7 +19,12 @@ public class ProductDAO {
 
     public void addProduct(String name, String description, float price, int quantity, int categoryId){
         String sql = "insert into product (prod_name, prod_desc, prod_price, prod_quantity, category_id) values (?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, name, description, price, quantity, categoryId);
+        int result = jdbcTemplate.update(sql, name, description, price, quantity, categoryId);
+        if (result > 0){
+            System.out.println("Product Added Successfully.");
+        }else{
+            System.out.println("Failed to add.");
+        }
     }
 
     public List<Product> getProductByNameOrCategory(String name, int categoryId){
@@ -30,12 +35,22 @@ public class ProductDAO {
 
     public void updateProduct(float price, int quantity, String description, int prodId){
         String sql = "update product set prod_price =?, prod_quantity =?, prod_desc =? where prod_id = ?";
-        jdbcTemplate.update(sql, price, quantity, description, prodId);
+        int result = jdbcTemplate.update(sql, price, quantity, description, prodId);
+        if (result > 0){
+            System.out.println("Product Updated Successfully.");
+        }else{
+            System.out.println("Failed to update.");
+        }
     }
 
     public void deleteProduct(int prodId){
         String sql = "delete from product where prod_id = ?";
-        jdbcTemplate.update(sql, prodId);
+        int result = jdbcTemplate.update(sql, prodId);
+        if (result > 0){
+            System.out.println("Product Deleted Successfully.");
+        }else{
+            System.out.println("Failed to delete.");
+        }
     }
 
     public List<Map<String, Object>> getProductsByCategory(String categoryName) {

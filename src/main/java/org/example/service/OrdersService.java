@@ -25,13 +25,11 @@ public class OrdersService {
     }
 
     public void updateOrderStatus(String orderStatus, int orderId) {
-        System.out.println("This is update dfunction");
         ordersDAO.UpdateOrderStatus(orderStatus, orderId);
     }
 
     public void cancelOrder(int customerId) {
         ordersDAO.cancelOrder(customerId);
-        System.out.println("yo");
     }
 
     public List<Map<String, Object>> fetchOrdersWithinDateRange(Date startDate, Date endDate) {
