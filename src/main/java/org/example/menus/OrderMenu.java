@@ -68,7 +68,7 @@ public class OrderMenu {
                     ordersService.updateOrderStatus(orderStatus, order_Id);
                     break;
 
-                    
+
                 case 4:
                     System.out.println("Canceling order...");
                     System.out.println("please enter order id to cancel the order:");

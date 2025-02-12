@@ -25,6 +25,7 @@ public class OrdersService {
     }
 
     public void updateOrderStatus(String orderStatus, int orderId) {
+        System.out.println("This is update dfunction");
         ordersDAO.UpdateOrderStatus(orderStatus, orderId);
     }
 
