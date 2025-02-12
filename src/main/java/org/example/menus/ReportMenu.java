@@ -63,20 +63,32 @@ public class ReportMenu {
         }
     }
 
-    public static void fetchOrdersWithinDateRange(OrdersService ordersService){
+    public static void fetchOrdersWithinDateRange(OrdersService ordersService) {
         try {
+            Scanner scanner = new Scanner(System.in);
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date startDate = sdf.parse("2025-02-12");
-            Date endDate = sdf.parse("2025-02-13");
+
+            System.out.print("Enter start date (yyyy-MM-dd): ");
+            String start_date = scanner.nextLine();
+            System.out.print("Enter end date (yyyy-MM-dd): ");
+            String end_date = scanner.nextLine();
+
+            Date startDate = sdf.parse(start_date);
+            Date endDate = sdf.parse(end_date);
 
             List<Map<String, Object>> orders = ordersService.fetchOrdersWithinDateRange(startDate, endDate);
 
-            System.out.println("==== Orders from " + startDate + " to " + endDate + " ====");
-            for (Map<String, Object> order : orders) {
-                System.out.println(order);
+            System.out.println("==== Orders from " + start_date + " to " + end_date + " ====");
+            if (orders.isEmpty()) {
+                System.out.println("No orders found.");
+            } else {
+                for (Map<String, Object> order : orders) {
+                    System.out.println(order);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
+
