@@ -27,7 +27,7 @@ CREATE TABLE `product` (
 ORDERS TABLE
 CREATE TABLE `orders` (
   `order_id` int NOT NULL AUTO_INCREMENT,
-  `order_status` varchar(30) NOT NULL,
+  `order_status` enum(''pending'',''processing'',''shipped'',''delivered'') NOT NULL DEFAULT ''pending'',
   `customer_id` int NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`order_id`),
