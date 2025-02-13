@@ -13,10 +13,9 @@ import java.util.Map;
 public class OrdersDAO {
     private final JdbcTemplate jdbcTemplate = DatabaseConfig.getJdbcTemplate();
 
-    // Create a new order with multiple products
     public void createOrder(int customerId, List<OrderItem> orderItems) {
         // Insert order and get order ID
-        String orderSql = "INSERT INTO orders (order_status, customer_id) VALUES ('Pending', ?)";
+        String orderSql = "INSERT INTO orders (customer_id) VALUES (?)";
         jdbcTemplate.update(orderSql, customerId);
 
         // Get the latest inserted order ID

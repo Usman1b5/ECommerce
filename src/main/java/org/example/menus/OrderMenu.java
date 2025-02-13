@@ -59,7 +59,7 @@ public class OrderMenu {
                     System.out.println("please enter order_id:");
                     Scanner id = new Scanner(System.in);
                     int order_Id = id.nextInt();
-                    System.out.println("please enter order status against above id:");
+                    System.out.println("Please enter the order status (Pending, Processing, Shipped, Delivered) against above id:");
                     Scanner status = new Scanner(System.in);
                     String orderStatus = status.nextLine();
 
